@@ -1,0 +1,314 @@
+[
+ {
+  "fn": "changeTruth",
+  "args": [
+   80,
+   100
+  ],
+  "expected": "From 80 to 100: up 25%."
+ },
+ {
+  "fn": "changeTruth",
+  "args": [
+   100,
+   80
+  ],
+  "expected": "From 100 to 80: down 20%."
+ },
+ {
+  "fn": "changeTruth",
+  "args": [
+   100,
+   100
+  ],
+  "expected": "From 100 to 100: no change."
+ },
+ {
+  "fn": "changeTruth",
+  "args": [
+   100,
+   0
+  ],
+  "expected": "From 100 to 0: down 100%."
+ },
+ {
+  "fn": "changeTruth",
+  "args": [
+   3,
+   4
+  ],
+  "expected": "From 3 to 4: up 33.33%."
+ },
+ {
+  "fn": "changeTruth",
+  "args": [
+   0.01,
+   0.02
+  ],
+  "expected": "From 0.01 to 0.02: up 100%."
+ },
+ {
+  "fn": "changeTruth",
+  "args": [
+   1000000,
+   999999.99
+  ],
+  "expected": "From 1000000 to 999999.99: down less than 0.01%."
+ },
+ {
+  "fn": "changeTruth",
+  "args": [
+   7,
+   7.5
+  ],
+  "expected": "From 7 to 7.5: up 7.14%."
+ },
+ {
+  "fn": "changeTruth",
+  "args": [
+   1000000,
+   1000000.01
+  ],
+  "expected": "ERR:new number must be between 0 and 1000000"
+ },
+ {
+  "fn": "changeTruth",
+  "args": [
+   0,
+   5
+  ],
+  "expected": "ERR:starting number must be between 0 and 1000000, over 0"
+ },
+ {
+  "fn": "changeTruth",
+  "args": [
+   5,
+   -1
+  ],
+  "expected": "ERR:new number must be between 0 and 1000000"
+ },
+ {
+  "fn": "changeTruth",
+  "args": [
+   1000001,
+   5
+  ],
+  "expected": "ERR:starting number must be between 0 and 1000000, over 0"
+ },
+ {
+  "fn": "changeTruth",
+  "args": [
+   5,
+   1000001
+  ],
+  "expected": "ERR:new number must be between 0 and 1000000"
+ },
+ {
+  "fn": "undoTruth",
+  "args": [
+   25,
+   "up"
+  ],
+  "expected": "A rise of 25% is undone by a fall of 20%."
+ },
+ {
+  "fn": "undoTruth",
+  "args": [
+   20,
+   "down"
+  ],
+  "expected": "A fall of 20% is undone by a rise of 25%."
+ },
+ {
+  "fn": "undoTruth",
+  "args": [
+   50,
+   "up"
+  ],
+  "expected": "A rise of 50% is undone by a fall of 33.33%."
+ },
+ {
+  "fn": "undoTruth",
+  "args": [
+   50,
+   "down"
+  ],
+  "expected": "A fall of 50% is undone by a rise of 100%."
+ },
+ {
+  "fn": "undoTruth",
+  "args": [
+   100,
+   "up"
+  ],
+  "expected": "A rise of 100% is undone by a fall of 50%."
+ },
+ {
+  "fn": "undoTruth",
+  "args": [
+   100,
+   "down"
+  ],
+  "expected": "ERR:a fall must be under 100%"
+ },
+ {
+  "fn": "undoTruth",
+  "args": [
+   99,
+   "down"
+  ],
+  "expected": "A fall of 99% is undone by a rise of 9900%."
+ },
+ {
+  "fn": "undoTruth",
+  "args": [
+   0.5,
+   "up"
+  ],
+  "expected": "A rise of 0.5% is undone by a fall of 0.5%."
+ },
+ {
+  "fn": "undoTruth",
+  "args": [
+   100000,
+   "up"
+  ],
+  "expected": "A rise of 100000% is undone by a fall of 99.9%."
+ },
+ {
+  "fn": "undoTruth",
+  "args": [
+   100001,
+   "up"
+  ],
+  "expected": "ERR:percent must be between 0 and 100000, over 0"
+ },
+ {
+  "fn": "undoTruth",
+  "args": [
+   0,
+   "up"
+  ],
+  "expected": "ERR:percent must be between 0 and 100000, over 0"
+ },
+ {
+  "fn": "undoTruth",
+  "args": [
+   -5,
+   "down"
+  ],
+  "expected": "ERR:percent must be between 0 and 100000, over 0"
+ },
+ {
+  "fn": "undoTruth",
+  "args": [
+   25,
+   "sideways"
+  ],
+  "expected": "ERR:direction must be up or down"
+ },
+ {
+  "fn": "undoTruth",
+  "args": [
+   33.33,
+   "up"
+  ],
+  "expected": "A rise of 33.33% is undone by a fall of 25%."
+ },
+ {
+  "fn": "pointTruth",
+  "args": [
+   4,
+   6
+  ],
+  "expected": "From 4% to 6%: up 2 percentage points, up 50% relative."
+ },
+ {
+  "fn": "pointTruth",
+  "args": [
+   6,
+   4
+  ],
+  "expected": "From 6% to 4%: down 2 percentage points, down 33.33% relative."
+ },
+ {
+  "fn": "pointTruth",
+  "args": [
+   5,
+   6
+  ],
+  "expected": "From 5% to 6%: up 1 percentage point, up 20% relative."
+ },
+ {
+  "fn": "pointTruth",
+  "args": [
+   5,
+   5
+  ],
+  "expected": "From 5% to 5%: no change."
+ },
+ {
+  "fn": "pointTruth",
+  "args": [
+   10,
+   0
+  ],
+  "expected": "From 10% to 0%: down 10 percentage points, down 100% relative."
+ },
+ {
+  "fn": "pointTruth",
+  "args": [
+   0.5,
+   1
+  ],
+  "expected": "From 0.5% to 1%: up 0.5 percentage points, up 100% relative."
+ },
+ {
+  "fn": "pointTruth",
+  "args": [
+   100,
+   0
+  ],
+  "expected": "From 100% to 0%: down 100 percentage points, down 100% relative."
+ },
+ {
+  "fn": "pointTruth",
+  "args": [
+   3,
+   3.01
+  ],
+  "expected": "From 3% to 3.01%: up 0.01 percentage points, up 0.33% relative."
+ },
+ {
+  "fn": "pointTruth",
+  "args": [
+   0,
+   5
+  ],
+  "expected": "ERR:first rate must be above 0 and at most 100"
+ },
+ {
+  "fn": "pointTruth",
+  "args": [
+   5,
+   101
+  ],
+  "expected": "ERR:second rate must be from 0 to 100"
+ },
+ {
+  "fn": "pointTruth",
+  "args": [
+   101,
+   5
+  ],
+  "expected": "ERR:first rate must be above 0 and at most 100"
+ },
+ {
+  "fn": "pointTruth",
+  "args": [
+   5,
+   -1
+  ],
+  "expected": "ERR:second rate must be from 0 to 100"
+ }
+]
